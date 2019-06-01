@@ -13,13 +13,11 @@ public class CurrentConditionsDisplay implements IObserver, IDisplayElement {
 
 	@Override
 	public void display() {
-		// TODO Auto-generated method stub
 		System.out.println("CurrentConditionsDisplay: " + temperature + ", " + humidity);
 	}
 
 	@Override
 	public void update(float temp, float humidity, float pressure) {
-		// TODO Auto-generated method stub
 		this.temperature = temp;
 		this.humidity = humidity;
 		display();
