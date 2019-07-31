@@ -1,15 +1,22 @@
-package com.llf.javaTest;
+package com.llf.javaTest.threadTest;
 
 public class StaticAndThreadTest extends Thread {
 
 	public volatile static int n;
+	public volatile static Thread th1;
 
+	// 线程唯一
 	public StaticAndThreadTest() {
-		Thread td = new Thread(this);
-		td.start();
+		synchronized (this) {
+			if (th1 == null) {
+				th1 = new Thread(this);
+				th1.start();
+			}
+		}
 	}
 
-	public synchronized void run() {
+	@Override
+	public void run() {
 		for (n = 0; n < 6; n++) {
 			try {
 				System.out.print(n);
