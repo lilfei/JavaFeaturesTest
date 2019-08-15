@@ -1,6 +1,6 @@
 package com.llf.javaTest;
 
-public class StringToIngeter {
+public class StringToInteger {
 
 	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) {
