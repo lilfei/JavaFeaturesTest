@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 
 public class SortTest {
 
@@ -32,6 +33,10 @@ public class SortTest {
 
 		tester.sortUsingJava8(names2);
 		System.out.println(names2);
+		
+		// 使用sorted方法对输出的10个随机数进行排序
+		Random random = new Random();
+		random.ints().limit(10).sorted().forEach(System.out::println);
 	}
 
 	// 使用 java 7 排序

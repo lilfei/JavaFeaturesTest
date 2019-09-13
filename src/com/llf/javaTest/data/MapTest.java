@@ -37,6 +37,11 @@ public class MapTest {
 		for (String v : map.values()) {
 			System.out.println("value= " + v);
 		}
+
+		// forEach遍历
+		map.forEach((key, value) -> {
+			System.out.println("forEach: k= " + key + ", v= " + value);
+		});
 	}
 
 }

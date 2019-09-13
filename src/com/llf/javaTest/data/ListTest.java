@@ -1,8 +1,11 @@
 package com.llf.javaTest.data;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ListTest {
 
@@ -25,13 +28,38 @@ public class ListTest {
 		}
 
 		// 第三种遍历 使用迭代器进行相关遍历
-
 		Iterator<String> ite = list.iterator();
 		while (ite.hasNext())// 判断下一个元素之后有值
 		{
 			System.out.println(ite.next());
 		}
 
+		// 第四种遍历forEach
+		list.forEach((item) -> {
+			System.out.println("list item: " + item);
+		});
+		list.forEach(System.out::println);
+		list.stream().filter(s->s.contains("H")).forEach(System.out::println);
+		
+		// 并行（parallel）程序
+		// filter 获取空字符串的数量
+		List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+		int count = (int) strings.parallelStream().filter(string -> string.isEmpty()).count();
+		System.out.println(count);
+		
+		// Collectors 类实现了很多归约操作
+		List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
+		System.out.println("筛选列表: " + filtered);
+		String mergedString = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
+		System.out.println("合并字符串: " + mergedString);
+		
+		// 统计
+		List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+		IntSummaryStatistics stats = numbers.stream().mapToInt((x) -> x).summaryStatistics();
+		System.out.println("列表中最大的数 : " + stats.getMax());
+		System.out.println("列表中最小的数 : " + stats.getMin());
+		System.out.println("所有数之和 : " + stats.getSum());
+		System.out.println("平均数 : " + stats.getAverage());
 	}
 
 }
