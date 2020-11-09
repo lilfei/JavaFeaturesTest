@@ -10,12 +10,12 @@ class Value {
 	}
 }
 
-public class Page262_final_static {
+public class P262_final_static {
 
 	private static Random rand = new Random(47);
 	private String id;
 
-	public Page262_final_static(String id) {
+	public P262_final_static(String id) {
 		this.id = id;
 	}
 
@@ -39,7 +39,7 @@ public class Page262_final_static {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Page262_final_static fd1 = new Page262_final_static("fd1");
+		P262_final_static fd1 = new P262_final_static("fd1");
 		fd1.v2.i++;
 		fd1.v1 = new Value(9);
 		for (int i = 0; i < fd1.a.length; i++) {
@@ -49,7 +49,7 @@ public class Page262_final_static {
 		System.out.println(fd1);
 		System.out.println("Creating new data");
 
-		Page262_final_static fd2 = new Page262_final_static("fd2");
+		P262_final_static fd2 = new P262_final_static("fd2");
 		System.out.println(fd1);
 		System.out.println(fd2);
 

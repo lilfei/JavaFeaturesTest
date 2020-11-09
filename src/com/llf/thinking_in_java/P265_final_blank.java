@@ -19,19 +19,19 @@ class Poppet {
  * @author llf
  * @date 2020年11月8日
  */
-public class Page265_final_blank {
+public class P265_final_blank {
 
 	private final int i = 0;
 	private final int j;
 
 	private final Poppet p;
 
-	public Page265_final_blank() {
+	public P265_final_blank() {
 		j = 1;
 		p = new Poppet(1);
 	}
 
-	public Page265_final_blank(int x) {
+	public P265_final_blank(int x) {
 		j = x;
 		p = new Poppet(x);
 	}
@@ -42,9 +42,9 @@ public class Page265_final_blank {
 	}
 
 	public static void main(String[] args) {
-		Page265_final_blank p1 = new Page265_final_blank();
+		P265_final_blank p1 = new P265_final_blank();
 
-		Page265_final_blank p2 = new Page265_final_blank(47);
+		P265_final_blank p2 = new P265_final_blank(47);
 
 		System.out.println(p1);
 		System.out.println(p2);
