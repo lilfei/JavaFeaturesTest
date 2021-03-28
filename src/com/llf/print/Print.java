@@ -1,6 +1,6 @@
 package com.llf.print;
 
-public class Print {
+public final class Print {
 	public static void print(String s) {
 		System.out.println(s);
 	}
